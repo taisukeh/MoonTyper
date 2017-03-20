@@ -76,7 +76,7 @@ keymap:
   "del": "bo" # ほ
   "ke/": "po" # ほ
   "de/": "po" # ほ
-  "dh": "a" # ま
+  "dh": "ma" # ま
   "kh": "ma" # ま
   "di": "mi" # み
   "ki": "mi" # み
