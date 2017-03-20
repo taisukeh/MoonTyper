@@ -7,40 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		093907541E7FEC1F0067DD83 /* RomajiTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093907531E7FEC1F0067DD83 /* RomajiTable.swift */; };
-		093907581E80053C0067DD83 /* KeyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093907571E80053C0067DD83 /* KeyLayout.swift */; };
 		0939075B1E8005870067DD83 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0939075A1E8005870067DD83 /* Yaml.framework */; };
-		0939075D1E80072A0067DD83 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939075C1E80072A0067DD83 /* Logger.swift */; };
-		0939075F1E8020240067DD83 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939075E1E8020240067DD83 /* UserInfo.swift */; };
-		093907621E8029420067DD83 /* InputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093907611E8029420067DD83 /* InputSource.swift */; };
-		093907641E8030E30067DD83 /* layouts in Resources */ = {isa = PBXBuildFile; fileRef = 093907631E8030E30067DD83 /* layouts */; };
-		093907661E8041BF0067DD83 /* CGEventExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093907651E8041BF0067DD83 /* CGEventExt.swift */; };
-		095FCCB51E7EF4900031B47D /* TsukiInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095FCCB41E7EF4900031B47D /* TsukiInterceptor.swift */; };
-		095FCCB71E7EF4B70031B47D /* KeycodeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095FCCB61E7EF4B70031B47D /* KeycodeTable.swift */; };
-		095FCCBB1E7EFA1E0031B47D /* Keymap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095FCCBA1E7EFA1E0031B47D /* Keymap.swift */; };
-		E48009051E432A9500E85169 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48009041E432A9500E85169 /* AppDelegate.swift */; };
-		E48009091E432A9500E85169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E48009081E432A9500E85169 /* Assets.xcassets */; };
-		E480090C1E432A9500E85169 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E480090A1E432A9500E85169 /* Main.storyboard */; };
+		0939077B1E804E3A0067DD83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939076B1E804E3A0067DD83 /* AppDelegate.swift */; };
+		0939077C1E804E3A0067DD83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0939076C1E804E3A0067DD83 /* Assets.xcassets */; };
+		0939077D1E804E3A0067DD83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0939076D1E804E3A0067DD83 /* Main.storyboard */; };
+		0939077E1E804E3A0067DD83 /* CGEventExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939076F1E804E3A0067DD83 /* CGEventExt.swift */; };
+		0939077F1E804E3A0067DD83 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 093907701E804E3A0067DD83 /* Info.plist */; };
+		093907801E804E3A0067DD83 /* InputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093907711E804E3A0067DD83 /* InputSource.swift */; };
+		093907811E804E3A0067DD83 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 093907721E804E3A0067DD83 /* Main.strings */; };
+		093907821E804E3A0067DD83 /* KeycodeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093907741E804E3A0067DD83 /* KeycodeTable.swift */; };
+		093907831E804E3A0067DD83 /* KeyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093907751E804E3A0067DD83 /* KeyLayout.swift */; };
+		093907841E804E3A0067DD83 /* Keymap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093907761E804E3A0067DD83 /* Keymap.swift */; };
+		093907851E804E3A0067DD83 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093907771E804E3A0067DD83 /* Logger.swift */; };
+		093907861E804E3A0067DD83 /* RomajiTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093907781E804E3A0067DD83 /* RomajiTable.swift */; };
+		093907871E804E3A0067DD83 /* TsukiInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093907791E804E3A0067DD83 /* TsukiInterceptor.swift */; };
+		093907881E804E3A0067DD83 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939077A1E804E3A0067DD83 /* UserInfo.swift */; };
+		0939078A1E804EDD0067DD83 /* layouts in Resources */ = {isa = PBXBuildFile; fileRef = 093907891E804EDD0067DD83 /* layouts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		093907531E7FEC1F0067DD83 /* RomajiTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomajiTable.swift; sourceTree = "<group>"; };
-		093907571E80053C0067DD83 /* KeyLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyLayout.swift; sourceTree = "<group>"; };
 		0939075A1E8005870067DD83 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/Mac/Yaml.framework; sourceTree = "<group>"; };
-		0939075C1E80072A0067DD83 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		0939075E1E8020240067DD83 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		093907601E8023A50067DD83 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
-		093907611E8029420067DD83 /* InputSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSource.swift; sourceTree = "<group>"; };
-		093907631E8030E30067DD83 /* layouts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = layouts; sourceTree = SOURCE_ROOT; };
-		093907651E8041BF0067DD83 /* CGEventExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGEventExt.swift; sourceTree = "<group>"; };
-		095FCCB41E7EF4900031B47D /* TsukiInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TsukiInterceptor.swift; sourceTree = "<group>"; };
-		095FCCB61E7EF4B70031B47D /* KeycodeTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeycodeTable.swift; sourceTree = "<group>"; };
-		095FCCBA1E7EFA1E0031B47D /* Keymap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keymap.swift; sourceTree = "<group>"; };
+		0939076B1E804E3A0067DD83 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0939076C1E804E3A0067DD83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0939076E1E804E3A0067DD83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0939076F1E804E3A0067DD83 /* CGEventExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGEventExt.swift; sourceTree = "<group>"; };
+		093907701E804E3A0067DD83 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		093907711E804E3A0067DD83 /* InputSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSource.swift; sourceTree = "<group>"; };
+		093907731E804E3A0067DD83 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		093907741E804E3A0067DD83 /* KeycodeTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeycodeTable.swift; sourceTree = "<group>"; };
+		093907751E804E3A0067DD83 /* KeyLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyLayout.swift; sourceTree = "<group>"; };
+		093907761E804E3A0067DD83 /* Keymap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keymap.swift; sourceTree = "<group>"; };
+		093907771E804E3A0067DD83 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		093907781E804E3A0067DD83 /* RomajiTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomajiTable.swift; sourceTree = "<group>"; };
+		093907791E804E3A0067DD83 /* TsukiInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TsukiInterceptor.swift; sourceTree = "<group>"; };
+		0939077A1E804E3A0067DD83 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		093907891E804EDD0067DD83 /* layouts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = layouts; sourceTree = "<group>"; };
 		E48009011E432A9500E85169 /* TsukiEmulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TsukiEmulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E48009041E432A9500E85169 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E48009081E432A9500E85169 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E480090B1E432A9500E85169 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E480090D1E432A9500E85169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +65,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0939076A1E804E3A0067DD83 /* TsukiEmulator */ = {
+			isa = PBXGroup;
+			children = (
+				0939076B1E804E3A0067DD83 /* AppDelegate.swift */,
+				0939076C1E804E3A0067DD83 /* Assets.xcassets */,
+				0939076D1E804E3A0067DD83 /* Main.storyboard */,
+				0939076F1E804E3A0067DD83 /* CGEventExt.swift */,
+				093907701E804E3A0067DD83 /* Info.plist */,
+				093907711E804E3A0067DD83 /* InputSource.swift */,
+				093907721E804E3A0067DD83 /* Main.strings */,
+				093907741E804E3A0067DD83 /* KeycodeTable.swift */,
+				093907751E804E3A0067DD83 /* KeyLayout.swift */,
+				093907761E804E3A0067DD83 /* Keymap.swift */,
+				093907771E804E3A0067DD83 /* Logger.swift */,
+				093907781E804E3A0067DD83 /* RomajiTable.swift */,
+				093907791E804E3A0067DD83 /* TsukiInterceptor.swift */,
+				0939077A1E804E3A0067DD83 /* UserInfo.swift */,
+			);
+			path = TsukiEmulator;
+			sourceTree = "<group>";
+		};
 		E48008F81E432A9500E85169 = {
 			isa = PBXGroup;
 			children = (
-				E48009031E432A9500E85169 /* TsukiEmulator */,
+				093907891E804EDD0067DD83 /* layouts */,
+				0939076A1E804E3A0067DD83 /* TsukiEmulator */,
 				E48009021E432A9500E85169 /* Products */,
 				093907591E8005870067DD83 /* Frameworks */,
 			);
@@ -78,28 +102,6 @@
 				E48009011E432A9500E85169 /* TsukiEmulator.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E48009031E432A9500E85169 /* TsukiEmulator */ = {
-			isa = PBXGroup;
-			children = (
-				093907631E8030E30067DD83 /* layouts */,
-				E48009041E432A9500E85169 /* AppDelegate.swift */,
-				E48009081E432A9500E85169 /* Assets.xcassets */,
-				E480090A1E432A9500E85169 /* Main.storyboard */,
-				E480090D1E432A9500E85169 /* Info.plist */,
-				095FCCB41E7EF4900031B47D /* TsukiInterceptor.swift */,
-				095FCCB61E7EF4B70031B47D /* KeycodeTable.swift */,
-				095FCCBA1E7EFA1E0031B47D /* Keymap.swift */,
-				093907531E7FEC1F0067DD83 /* RomajiTable.swift */,
-				093907571E80053C0067DD83 /* KeyLayout.swift */,
-				0939075C1E80072A0067DD83 /* Logger.swift */,
-				0939075E1E8020240067DD83 /* UserInfo.swift */,
-				093907611E8029420067DD83 /* InputSource.swift */,
-				093907651E8041BF0067DD83 /* CGEventExt.swift */,
-			);
-			name = TsukiEmulator;
-			path = SandS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +148,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = E48008F81E432A9500E85169;
 			productRefGroup = E48009021E432A9500E85169 /* Products */;
@@ -162,9 +165,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				093907641E8030E30067DD83 /* layouts in Resources */,
-				E48009091E432A9500E85169 /* Assets.xcassets in Resources */,
-				E480090C1E432A9500E85169 /* Main.storyboard in Resources */,
+				0939078A1E804EDD0067DD83 /* layouts in Resources */,
+				0939077C1E804E3A0067DD83 /* Assets.xcassets in Resources */,
+				093907811E804E3A0067DD83 /* Main.strings in Resources */,
+				0939077D1E804E3A0067DD83 /* Main.storyboard in Resources */,
+				0939077F1E804E3A0067DD83 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,29 +198,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				093907661E8041BF0067DD83 /* CGEventExt.swift in Sources */,
-				093907621E8029420067DD83 /* InputSource.swift in Sources */,
-				095FCCB71E7EF4B70031B47D /* KeycodeTable.swift in Sources */,
-				0939075D1E80072A0067DD83 /* Logger.swift in Sources */,
-				095FCCBB1E7EFA1E0031B47D /* Keymap.swift in Sources */,
-				095FCCB51E7EF4900031B47D /* TsukiInterceptor.swift in Sources */,
-				093907541E7FEC1F0067DD83 /* RomajiTable.swift in Sources */,
-				E48009051E432A9500E85169 /* AppDelegate.swift in Sources */,
-				0939075F1E8020240067DD83 /* UserInfo.swift in Sources */,
-				093907581E80053C0067DD83 /* KeyLayout.swift in Sources */,
+				0939077E1E804E3A0067DD83 /* CGEventExt.swift in Sources */,
+				093907821E804E3A0067DD83 /* KeycodeTable.swift in Sources */,
+				093907841E804E3A0067DD83 /* Keymap.swift in Sources */,
+				093907801E804E3A0067DD83 /* InputSource.swift in Sources */,
+				093907851E804E3A0067DD83 /* Logger.swift in Sources */,
+				093907831E804E3A0067DD83 /* KeyLayout.swift in Sources */,
+				093907861E804E3A0067DD83 /* RomajiTable.swift in Sources */,
+				093907871E804E3A0067DD83 /* TsukiInterceptor.swift in Sources */,
+				093907881E804E3A0067DD83 /* UserInfo.swift in Sources */,
+				0939077B1E804E3A0067DD83 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E480090A1E432A9500E85169 /* Main.storyboard */ = {
+		0939076D1E804E3A0067DD83 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E480090B1E432A9500E85169 /* Base */,
-				093907601E8023A50067DD83 /* ja */,
+				0939076E1E804E3A0067DD83 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		093907721E804E3A0067DD83 /* Main.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				093907731E804E3A0067DD83 /* ja */,
+			);
+			name = Main.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -322,7 +334,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = SandS/Info.plist;
+				INFOPLIST_FILE = TsukiEmulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = taisukeh.TsukiEmulator;
@@ -340,7 +352,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = SandS/Info.plist;
+				INFOPLIST_FILE = TsukiEmulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = taisukeh.TsukiEmulator;
