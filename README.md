@@ -13,7 +13,8 @@
 
 ## インストール
 
-TBD.
+https://github.com/taisukeh/TsukiEmulator/releases
+から最新の `TsukiEmulator.app` をダウンロードして展開します。
 
 ## 使い方
 
