@@ -83,6 +83,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     self.keyLayouts = loadLayoutFiles()
     layoutMenuItems = []
     interceptor.keyLayout = nil
+    
+    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+      let item = NSMenuItem(title: "TsukiEmulator \(version)", action: nil, keyEquivalent: "")
+      item.isEnabled = false
+      menu.addItem(item)
+    }
+    
+    menu.addItem(NSMenuItem.separator())
 
     for keyLayout in keyLayouts {
       let item = NSMenuItem(title: keyLayout.name,
@@ -105,7 +113,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     menu.addItem(withTitle: "一時停止", action: #selector(AppDelegate.tempStop(_:)), keyEquivalent: "")
     menu.addItem(withTitle: "再読み込み", action: #selector(AppDelegate.reload(_:)), keyEquivalent: "")
     menu.addItem(withTitle: "終了", action: #selector(AppDelegate.quit(_:)), keyEquivalent: "")
-
+    
     if let lastSelectedFile = userInfo.lastSelectedLayoutFile {
       for (i, layout) in self.keyLayouts.enumerated() {
         if layout.file == lastSelectedFile {

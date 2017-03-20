@@ -28,7 +28,7 @@ TBD.
 
 ## 設定ファイル
 
-ホームディレクトリの `~/TsukiEmulator` 以下に [YAML](https://ja.wikipedia.org/wiki/YAML)形式で月配列の定義を置きます。
+ホームディレクトリの `~/TsukiEmulator` ディレクトリ以下に [YAML](https://ja.wikipedia.org/wiki/YAML)形式で月配列の定義を置きます。
 
 2-263の設定ファイルは同封しています。（自分はUSキーボードなので日本語キーボード用の定義は間違っているかもしれません）
 
