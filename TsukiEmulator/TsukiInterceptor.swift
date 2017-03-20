@@ -133,6 +133,12 @@ class TsukiInterceptor: NSObject {
         self.curKeymap = nextKeymap
         return nil
       }
+
+      if curKeymap.middle.level > 0 &&  CGKeyCode(event.getIntegerValueField(.keyboardEventKeycode)) == 51 {
+        // バックスペースで途中の状態をキャンセルする
+        self.curKeymap = nil
+        return nil
+      }
       
       if !curKeymap.match.isEmpty && !event.hasModifier {
         self.curKeymap = nil
