@@ -12,7 +12,7 @@ import Carbon
 
 class TsukiInterceptor: NSObject {
   private var curKeymap: (match: Keymap, middle: Keymap)?
-  private var enabledInputSourceIds: [String] = []
+  var isOnlyJapaneseInput: Bool = false
   private var inputSourceRegexp = try! NSRegularExpression(pattern: "Japanese",
                                                            options: [NSRegularExpression.Options.caseInsensitive])
   private var latestTimestamp: CGEventTimestamp = 0
@@ -54,12 +54,14 @@ class TsukiInterceptor: NSObject {
 
     let inputSourceId = currentInputSourceId()
 
-    let matches = inputSourceRegexp.matches(in: inputSourceId,
-                                            options: [],
-                                            range: NSMakeRange(0, inputSourceId.characters.count))
-    
-    if matches.count == 0 { // not match
-      return Unmanaged.passUnretained(event)
+    if isOnlyJapaneseInput {
+      let matches = inputSourceRegexp.matches(in: inputSourceId,
+                                              options: [],
+                                              range: NSMakeRange(0, inputSourceId.characters.count))
+
+      if matches.count == 0 { // not match
+        return Unmanaged.passUnretained(event)
+      }
     }
 
     if event.timestamp <= latestTimestamp {

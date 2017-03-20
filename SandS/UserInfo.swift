@@ -11,6 +11,7 @@ import Foundation
 class UserInfo {
   private let lastSelectedLayoutFileKey = "TsukiEmulator_lastSelectedLayoutFile"
   private let lastSelectedKeyboardLayoutKey = "TsukiEmulator_keybaordLayout"
+  private let onlyJapaneseInputKey = "TsukiEmulator_isOnlyJapaneseInput"
 
   var lastSelectedLayoutFile: URL? {
     get {
@@ -27,6 +28,15 @@ class UserInfo {
     }
     set(layout) {
       UserDefaults.standard.set(layout, forKey: lastSelectedKeyboardLayoutKey)
+    }
+  }
+  
+  var isOnlyJapaneseInput: Bool {
+    get {
+      return UserDefaults.standard.bool(forKey: onlyJapaneseInputKey)
+    }
+    set(b) {
+      UserDefaults.standard.set(b, forKey: onlyJapaneseInputKey)
     }
   }
 }

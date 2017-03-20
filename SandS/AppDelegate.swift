@@ -95,6 +95,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     menu.addItem(NSMenuItem.separator())
 
+    let isOnlyJpnMenuItem = NSMenuItem(title: "日本語入力時のみ有効", action: #selector(AppDelegate.onlyJapaneseInput(_:)), keyEquivalent: "")
+    isOnlyJpnMenuItem.state = userInfo.isOnlyJapaneseInput ? NSOnState : NSOffState
+    menu.addItem(isOnlyJpnMenuItem)
+    interceptor.isOnlyJapaneseInput = userInfo.isOnlyJapaneseInput
+
+    menu.addItem(NSMenuItem.separator())
+    
     menu.addItem(withTitle: "一時停止", action: #selector(AppDelegate.tempStop(_:)), keyEquivalent: "")
     menu.addItem(withTitle: "再読み込み", action: #selector(AppDelegate.reload(_:)), keyEquivalent: "")
     menu.addItem(withTitle: "終了", action: #selector(AppDelegate.quit(_:)), keyEquivalent: "")
@@ -121,7 +128,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     userInfo.lastSelectedLayoutFile = layout.file
   }
   
-  func keyboardLayout(_ menuItem: NSMenuItem) {
+  func onlyJapaneseInput(_ menuItem: NSMenuItem) {
+    menuItem.state = menuItem.state == NSOffState ? NSOnState : NSOffState
+
+    userInfo.isOnlyJapaneseInput = menuItem.state == NSOnState
+    interceptor.isOnlyJapaneseInput = menuItem.state == NSOnState
   }
 
   func reload(_ sender: Any) {

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SandS.xcodeproj">
+      location = "self:/Users/tahori/mpf/app/SandS/TsukiEmulator.xcodeproj">
    </FileRef>
 </Workspace>
