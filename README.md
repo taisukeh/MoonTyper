@@ -7,17 +7,31 @@
 入力する文字が確定した時点ではじめて対応するローマ字のキーを発火します。濁点、半濁点は清音に後置の場合、「は」を入力した時点では「は」なのか「ば」なのか「ぱ」なのか確定しないため、「は」の入力後に何かしらのキーを押した際に初めて「は」（もしくは濁点を押した場合は「ば」）を出力します。
 
 
+## 対応OS
+
+- macOS Sierra 10.12以降
+
 ## インストール
 
 TBD.
 
 ## 使い方
 
-起動後アクセシビリティで
+起動後アクセシビリティを許可してください。
+
+![](./imgs/PrivacySettings.png)
+
+メニューアイコンから使いたいキー配列を選択します。
+![](./imgs/MenuCapture.png)
+
+タイピングゲームで高いスコアを叩き出しましょう！
 
 ## 設定ファイル
 
 ホームディレクトリの `~/TsukiEmulator` 以下に [YAML](https://ja.wikipedia.org/wiki/YAML)形式で月配列の定義を置きます。
+
+2-263の設定ファイルは同封しています。（自分はUSキーボードなので日本語キーボード用の定義は間違っているかもしれません）
+
 
 ```
 name: "<表示名>"
@@ -29,19 +43,10 @@ keymap:
   "i": "i"
   "j": "u"
   "du": "e"
-n```
+```
 
-# SandS
+## 補足
 
-- `Space → Space`
-- `Space+A → Shift+A`, `Space+B → Shift+B`
-- `Control+Space → Control+Space`, `Alt+Space → Alt+Space`
+2-263でしか試していないため他の月配列の定義に現在の実装で対応できているかわかりません。
 
-## Install
-
-[download SandS.app.zip](https://github.com/ToQoz/SandS/releases/download/v1.0/SandS.app.zip)
-
-## Tested on
-
-- OSX El Capitan 10.11.6
-- macOS Sierra 10.12.3
+こういった点を含め不具合などはissueで報告いただけるとありがたいです。

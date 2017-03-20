@@ -12,7 +12,6 @@
 		0939077C1E804E3A0067DD83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0939076C1E804E3A0067DD83 /* Assets.xcassets */; };
 		0939077D1E804E3A0067DD83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0939076D1E804E3A0067DD83 /* Main.storyboard */; };
 		0939077E1E804E3A0067DD83 /* CGEventExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939076F1E804E3A0067DD83 /* CGEventExt.swift */; };
-		0939077F1E804E3A0067DD83 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 093907701E804E3A0067DD83 /* Info.plist */; };
 		093907801E804E3A0067DD83 /* InputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093907711E804E3A0067DD83 /* InputSource.swift */; };
 		093907811E804E3A0067DD83 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 093907721E804E3A0067DD83 /* Main.strings */; };
 		093907821E804E3A0067DD83 /* KeycodeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093907741E804E3A0067DD83 /* KeycodeTable.swift */; };
@@ -121,7 +120,7 @@
 			dependencies = (
 			);
 			name = TsukiEmulator;
-			productName = SandS;
+			productName = TsukiEmulator;
 			productReference = E48009011E432A9500E85169 /* TsukiEmulator.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -169,7 +168,6 @@
 				0939077C1E804E3A0067DD83 /* Assets.xcassets in Resources */,
 				093907811E804E3A0067DD83 /* Main.strings in Resources */,
 				0939077D1E804E3A0067DD83 /* Main.storyboard in Resources */,
-				0939077F1E804E3A0067DD83 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
