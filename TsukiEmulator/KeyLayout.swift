@@ -21,50 +21,43 @@ struct KeyLayout {
   let keymap: Keymap
 }
 
-func initDefaultLayoutFile(dir: URL) {
-  do {
-    if !FileManager.default.fileExists(atPath: dir.path) {
-      try FileManager.default.createDirectory(at: dir,
-                                              withIntermediateDirectories: false,
-                                              attributes: nil)
-    }
+func loadLayoutFiles() -> [KeyLayout] {
+  return loadBundledLayoutFlie() + loadUserLayoutFiles()
+}
 
-    guard let defaultUSFile = Bundle.main.path(forResource: "layouts/tsuki-2-263_us", ofType: "yml") else {
+func loadBundledLayoutFlie() -> [KeyLayout] {
+  let files = ["tsuki-2-263_us", "tsuki-2-263_jis", "azik_us"]
+
+  return files.flatMap { file in
+    guard let url = Bundle.main.url(forResource: "layouts/\(file)", withExtension: "yml") else {
       assert(false)
-      return
+      return nil
     }
 
-    guard let defaultJisFile = Bundle.main.path(forResource: "layouts/tsuki-2-263_jis", ofType: "yml") else {
+    guard let keyLayout = loadKeylayout(yamlPath: url) else {
       assert(false)
-      return
+      return nil
     }
-
-    let destUSPath = dir.appendingPathComponent("tsuki-2-263_us.yml")
-    if !FileManager.default.fileExists(atPath: destUSPath.path) {
-      try FileManager.default.copyItem(atPath: defaultUSFile, toPath: destUSPath.path)
-    }
-
-    let destJisPath = dir.appendingPathComponent("tsuki-2-263_jis.yml")
-    if !FileManager.default.fileExists(atPath: destJisPath.path) {
-      try FileManager.default.copyItem(atPath: defaultJisFile, toPath: destJisPath.path)
-    }
-  } catch let error {
-    warn(error.localizedDescription)
+    return keyLayout
   }
 }
-func loadLayoutFiles() -> [KeyLayout] {
 
-  let dirURl = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("TsukiEmulator")
-  initDefaultLayoutFile(dir: dirURl)
+func loadUserLayoutFiles() -> [KeyLayout] {
+  let dirURL = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("TsukiEmulator")
   
   do {
+    // create directory if not exists
+    if !FileManager.default.fileExists(atPath: dirURL.path) {
+      try FileManager.default.createDirectory(at: dirURL, withIntermediateDirectories: false, attributes: nil)
+    }
+
     // Get the directory contents urls (including subfolders urls)
-    let directoryContents = try FileManager.default.contentsOfDirectory(at: dirURl,
+    let directoryContents = try FileManager.default.contentsOfDirectory(at: dirURL,
                                                                         includingPropertiesForKeys: nil, options: [])
 
     // if you want to filter the directory contents you can do like this:
     let files = directoryContents.filter{ $0.pathExtension == "yml" || $0.pathExtension == "yaml" }
-    
+
     var keyLayouts: [KeyLayout] = []
     for file in files {
       if let keyLayout = loadKeylayout(yamlPath: file) {

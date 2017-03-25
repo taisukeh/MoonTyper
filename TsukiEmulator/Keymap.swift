@@ -105,13 +105,20 @@ enum KeySequenceMatch {
 
 
 struct KeyResult {
-  let keysStr: String
   let keyCodes: [CGKeyCode]
+  
+  init() {
+    keyCodes = []
+  }
+  
+  init(KeyResult: KeyResult, event: CGEvent) {
+    let keyCode = CGKeyCode(event.getIntegerValueField(.keyboardEventKeycode))
+    keyCodes = KeyResult.keyCodes + [keyCode]
+  }
 
   init(key: String, keyboard: Keyboard) {
     let keycodeTable = keycodeTableFor(keyboard: keyboard)
 
-    self.keysStr = key
     var keyCodes: [CGKeyCode] = []
     for (_, c) in key.characters.enumerated() {
       keyCodes.append(keycodeTable[c.description]!)
@@ -119,10 +126,10 @@ struct KeyResult {
     self.keyCodes = keyCodes
   }
   
-  var jaCharCount: Int {
-    return romajiTable.jaCharCount(s: keysStr)
+  var isEmpty: Bool {
+    return keyCodes.isEmpty
   }
-
+  
   func postEvent(from event: CGEvent) {
     let origKeyCode = CGKeyCode(event.getIntegerValueField(.keyboardEventKeycode))
     for keyCode in keyCodes {
@@ -130,6 +137,12 @@ struct KeyResult {
       event.post(tap: .cghidEventTap)
     }
     event.setIntegerValueField(.keyboardEventKeycode, value: Int64(origKeyCode))
+  }
+}
+
+extension KeyResult {
+  static func + (lhs: KeyResult, rhs: CGEvent) -> KeyResult {
+    return KeyResult(KeyResult: lhs, event: rhs)
   }
 }
 

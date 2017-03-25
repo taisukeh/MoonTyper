@@ -11,20 +11,20 @@ import Cocoa
 import Carbon
 
 class TsukiInterceptor: NSObject {
-  private var curKeymap: (match: Keymap, middle: Keymap)?
+  private var keyState: (match: Keymap, middle: Keymap, queue: KeyResult)?
   var isOnlyJapaneseInput: Bool = false
   private var inputSourceRegexp = try! NSRegularExpression(pattern: "Japanese",
                                                            options: [NSRegularExpression.Options.caseInsensitive])
   private var latestTimestamp: CGEventTimestamp = 0
   var isStop: Bool = false {
     didSet {
-      curKeymap = nil
+      keyState = nil
     }
   }
   
   var keyLayout: KeyLayout? {
     didSet {
-      curKeymap = nil
+      keyState = nil
     }
   }
   
@@ -73,88 +73,53 @@ class TsukiInterceptor: NSObject {
     return interceptKeyDownInner(event, keyMap: keyLayout.keymap)
   }
   
-  let isRetypeMode: Bool = false
-
   func interceptKeyDownInner(_ event: CGEvent, keyMap initKeymap: Keymap) -> Unmanaged<CGEvent>? {
 
-    let curKeymap = self.curKeymap ?? (match: Keymap(level: 0, entries: []), middle:initKeymap)
-    let nextKeymap = curKeymap.middle.find(event: event)
+    let keyState = self.keyState ?? (match: Keymap(level: 0, entries: []),
+                                     middle:initKeymap,
+                                     queue: KeyResult())
+    let nextKeymap = keyState.middle.find(event: event)
     
-    if isRetypeMode {
-      if !curKeymap.match.isEmpty && !nextKeymap.match.isEmpty {
-        for _ in 0 ..< curKeymap.match.entries[0].keyResult.jaCharCount {
-          backspaceKeyResult.postEvent(from: event)
-        }
-        nextKeymap.match.entries[0].keyResult.postEvent(from: event)
-        self.curKeymap = nil
-        return nil
-      }
-
-      if !nextKeymap.match.isEmpty && !nextKeymap.middle.isEmpty {
-        nextKeymap.match.entries[0].keyResult.postEvent(from: event)
-        self.curKeymap = nextKeymap
-        return nil
-      }
-
-      if !nextKeymap.middle.isEmpty {
-        self.curKeymap = nextKeymap
-        return nil
-      }
-
-      if !nextKeymap.match.isEmpty {
-        nextKeymap.match.entries[0].keyResult.postEvent(from: event)
-        self.curKeymap = nil
-        return nil
-      }
-
-      let initMatchedRes = initKeymap.find(event: event)
-      if !initMatchedRes.match.isEmpty {
-        initMatchedRes.match.entries[0].keyResult.postEvent(from: event)
-        self.curKeymap = initMatchedRes
-        return nil
-      }
-      
-      if !initMatchedRes.middle.isEmpty {
-        self.curKeymap = initMatchedRes
-        return nil
-      }
-
-      self.curKeymap = nil
-      return Unmanaged.passUnretained(event)
-    } else {
-    
-      if !nextKeymap.match.isEmpty && nextKeymap.middle.isEmpty {
-        nextKeymap.match.entries[0].keyResult.postEvent(from: event)
-        self.curKeymap = nil
-        return nil
-      }
-      
-      if !nextKeymap.middle.isEmpty {
-        self.curKeymap = nextKeymap
-        return nil
-      }
-
-      if curKeymap.middle.level > 0 &&  CGKeyCode(event.getIntegerValueField(.keyboardEventKeycode)) == 51 {
-        // バックスペースで途中の状態をキャンセルする
-        self.curKeymap = nil
-        return nil
-      }
-      
-      if !curKeymap.match.isEmpty && !event.hasModifier {
-        self.curKeymap = nil
-        curKeymap.match.entries[0].keyResult.postEvent(from: event)
-        if let newEvent = interceptKeyDownInner(event, keyMap: initKeymap) {
-          newEvent.takeUnretainedValue().post(tap: .cghidEventTap)
-        }
-        return nil
-      }
-      
-      self.curKeymap = nil
-      
-      return Unmanaged.passUnretained(event)
+    if !nextKeymap.match.isEmpty && nextKeymap.middle.isEmpty {
+      nextKeymap.match.entries[0].keyResult.postEvent(from: event)
+      self.keyState = nil
+      return nil
     }
+    
+    if !nextKeymap.middle.isEmpty {
+      self.keyState = (match: nextKeymap.match,
+                       middle: nextKeymap.middle,
+                       queue: keyState.queue + event)
+      return nil
+    }
+    
+    if keyState.middle.level > 0 &&  CGKeyCode(event.getIntegerValueField(.keyboardEventKeycode)) == 51 {
+      // バックスペースで途中の状態をキャンセルする
+      self.keyState = nil
+      return nil
+    }
+    
+    if !keyState.match.isEmpty && !event.hasModifier {
+      self.keyState = nil
+      keyState.match.entries[0].keyResult.postEvent(from: event)
+      if let newEvent = interceptKeyDownInner(event, keyMap: initKeymap) {
+        newEvent.takeUnretainedValue().post(tap: .cghidEventTap)
+      }
+      return nil
+    }
+    
+    if !keyState.queue.isEmpty {
+      keyState.queue.postEvent(from: event)
+      event.post(tap: .cghidEventTap)
+      self.keyState = nil
+      return nil
+    }
+    
+    self.keyState = nil
+    
+    return Unmanaged.passUnretained(event)
   }
-  
+
   func interceptKeyUp(_ event: CGEvent) -> Unmanaged<CGEvent>? {
     return Unmanaged.passUnretained(event)
   }
