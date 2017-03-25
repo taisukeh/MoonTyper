@@ -43,7 +43,7 @@ func loadBundledLayoutFlie() -> [KeyLayout] {
 }
 
 func loadUserLayoutFiles() -> [KeyLayout] {
-  let dirURL = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("TsukiEmulator")
+  let dirURL = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("MoonTyper")
   
   do {
     // create directory if not exists

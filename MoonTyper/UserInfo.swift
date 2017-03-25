@@ -9,9 +9,9 @@
 import Foundation
 
 class UserInfo {
-  private let lastSelectedLayoutFileKey = "TsukiEmulator_lastSelectedLayoutFile"
-  private let lastSelectedKeyboardLayoutKey = "TsukiEmulator_keybaordLayout"
-  private let onlyJapaneseInputKey = "TsukiEmulator_isOnlyJapaneseInput"
+  private let lastSelectedLayoutFileKey = "MoonTyper_lastSelectedLayoutFile"
+  private let lastSelectedKeyboardLayoutKey = "MoonTyper_keybaordLayout"
+  private let onlyJapaneseInputKey = "MoonTyper_isOnlyJapaneseInput"
 
   var lastSelectedLayoutFile: URL? {
     get {

@@ -11,7 +11,7 @@ import Cocoa
 
 func warn(_ message: String) {
   let notification = NSUserNotification()
-  notification.title = "TsukiEmulator"
+  notification.title = "MoonTyper"
   notification.informativeText = message
   NSUserNotificationCenter.default.deliver(notification)
 }
