@@ -15,6 +15,7 @@ class TsukiInterceptor: NSObject {
   var isOnlyJapaneseInput: Bool = false
   private var inputSourceRegexp = try! NSRegularExpression(pattern: "Japanese",
                                                            options: [NSRegularExpression.Options.caseInsensitive])
+  private var stickyShiftFlag = false
   private var latestTimestamp: CGEventTimestamp = 0
   var isStop: Bool = false {
     didSet {
@@ -74,6 +75,19 @@ class TsukiInterceptor: NSObject {
   }
   
   func interceptKeyDownInner(_ event: CGEvent, keyMap initKeymap: Keymap) -> Unmanaged<CGEvent>? {
+    guard let keyLayout = keyLayout else { return Unmanaged.passUnretained(event) }
+    
+    if let stickyShift = keyLayout.stickyShift {
+      if stickyShiftFlag {
+        event.flags.insert(.maskShift)
+        stickyShiftFlag = false
+      } else {
+        if stickyShift == CGKeyCode(event.getIntegerValueField(.keyboardEventKeycode)) {
+          stickyShiftFlag = true
+          return nil
+        }
+      }
+    }
 
     let keyState = self.keyState ?? (match: Keymap(level: 0, entries: []),
                                      middle:initKeymap,
@@ -93,7 +107,7 @@ class TsukiInterceptor: NSObject {
       return nil
     }
     
-    if keyState.middle.level > 0 &&  CGKeyCode(event.getIntegerValueField(.keyboardEventKeycode)) == 51 {
+    if keyState.middle.level > 0 && CGKeyCode(event.getIntegerValueField(.keyboardEventKeycode)) == 51 {
       // バックスペースで途中の状態をキャンセルする
       self.keyState = nil
       return nil

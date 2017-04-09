@@ -18,6 +18,7 @@ struct KeyLayout {
   let file: URL
   let name: String
   let keyboard: Keyboard
+  let stickyShift: CGKeyCode?
   let keymap: Keymap
 }
 
@@ -95,9 +96,14 @@ func loadKeylayout(yamlPath location: URL) -> KeyLayout? {
 
   guard let name = loadName(location: location, yaml: yaml) else { return nil }
   guard let keyboard = loadKeyboard(location: location, yaml: yaml) else { return nil }
+  let stickyShift = loadStickyShift(location: location, keyboard: keyboard, yaml: yaml)
   let keymap = loadKeymap(location: location, yaml: yaml, keyboard: keyboard)
 
-  return KeyLayout(file: location, name: name, keyboard: keyboard, keymap: keymap)
+  return KeyLayout(file: location,
+                   name: name,
+                   keyboard: keyboard,
+                   stickyShift: stickyShift,
+                   keymap: keymap)
 }
 
 func loadName(location: URL, yaml: Yaml) -> String? {
@@ -116,6 +122,19 @@ func loadKeyboard(location: URL, yaml: Yaml) -> Keyboard? {
   return Keyboard.init(rawValue: keyboard)
 }
 
+func loadStickyShift(location: URL, keyboard: Keyboard, yaml: Yaml) -> CGKeyCode? {
+    guard let keyName = yaml["stickey-shift"].string else {
+        return nil
+    }
+
+    let keycodeTable = keycodeTableFor(keyboard: keyboard)
+    if let key = keycodeTable[keyName] {
+        return key
+    } else {
+        return nil
+    }
+}
+
 func loadKeymap(location: URL, yaml: Yaml, keyboard: Keyboard) -> Keymap {
   var table: [(String, String)] = []
 
@@ -128,7 +147,7 @@ func loadKeymap(location: URL, yaml: Yaml, keyboard: Keyboard) -> Keymap {
       }
     }
   } else {
-    warn("\(location), keymap要素がありません")
+    return Keymap(table: [], keyboard: keyboard)
   }
   return Keymap(table: table, keyboard: keyboard)
 }
