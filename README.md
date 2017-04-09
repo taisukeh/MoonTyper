@@ -14,6 +14,7 @@
 
 ## インストール
 
+https://github.com/taisukeh/MoonType/releases
 https://github.com/taisukeh/MoonTyper/releases
 から最新の `MoonTyper.app` をダウンロードして展開します。
 

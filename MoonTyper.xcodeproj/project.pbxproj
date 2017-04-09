@@ -22,7 +22,18 @@
 		093907871E804E3A0067DD83 /* TsukiInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093907791E804E3A0067DD83 /* TsukiInterceptor.swift */; };
 		093907881E804E3A0067DD83 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939077A1E804E3A0067DD83 /* UserInfo.swift */; };
 		0939078A1E804EDD0067DD83 /* layouts in Resources */ = {isa = PBXBuildFile; fileRef = 093907891E804EDD0067DD83 /* layouts */; };
+		09560E531E9011AC0044B877 /* MoonTyperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09560E521E9011AC0044B877 /* MoonTyperTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		09560E551E9011AC0044B877 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E48008F91E432A9500E85169 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E48009001E432A9500E85169;
+			remoteInfo = MoonTyper;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0939075A1E8005870067DD83 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/Mac/Yaml.framework; sourceTree = "<group>"; };
@@ -41,10 +52,20 @@
 		093907791E804E3A0067DD83 /* TsukiInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TsukiInterceptor.swift; sourceTree = "<group>"; };
 		0939077A1E804E3A0067DD83 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		093907891E804EDD0067DD83 /* layouts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = layouts; sourceTree = "<group>"; };
+		09560E501E9011AC0044B877 /* MoonTyperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonTyperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		09560E521E9011AC0044B877 /* MoonTyperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonTyperTests.swift; sourceTree = "<group>"; };
+		09560E541E9011AC0044B877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E48009011E432A9500E85169 /* MoonTyper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoonTyper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		09560E4D1E9011AC0044B877 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E48008FE1E432A9500E85169 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,11 +107,21 @@
 			path = MoonTyper;
 			sourceTree = "<group>";
 		};
+		09560E511E9011AC0044B877 /* MoonTyperTests */ = {
+			isa = PBXGroup;
+			children = (
+				09560E521E9011AC0044B877 /* MoonTyperTests.swift */,
+				09560E541E9011AC0044B877 /* Info.plist */,
+			);
+			path = MoonTyperTests;
+			sourceTree = "<group>";
+		};
 		E48008F81E432A9500E85169 = {
 			isa = PBXGroup;
 			children = (
 				093907891E804EDD0067DD83 /* layouts */,
 				0939076A1E804E3A0067DD83 /* MoonType */,
+				09560E511E9011AC0044B877 /* MoonTyperTests */,
 				E48009021E432A9500E85169 /* Products */,
 				093907591E8005870067DD83 /* Frameworks */,
 			);
@@ -100,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				E48009011E432A9500E85169 /* MoonTyper.app */,
+				09560E501E9011AC0044B877 /* MoonTyperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +139,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		09560E4F1E9011AC0044B877 /* MoonTyperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09560E591E9011AC0044B877 /* Build configuration list for PBXNativeTarget "MoonTyperTests" */;
+			buildPhases = (
+				09560E4C1E9011AC0044B877 /* Sources */,
+				09560E4D1E9011AC0044B877 /* Frameworks */,
+				09560E4E1E9011AC0044B877 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				09560E561E9011AC0044B877 /* PBXTargetDependency */,
+			);
+			name = MoonTyperTests;
+			productName = MoonTyperTests;
+			productReference = 09560E501E9011AC0044B877 /* MoonTyperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E48009001E432A9500E85169 /* MoonTyper */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E48009101E432A9500E85169 /* Build configuration list for PBXNativeTarget "MoonTyper" */;
@@ -131,10 +181,16 @@
 		E48008F91E432A9500E85169 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Takatoshi Matsumoto";
 				TargetAttributes = {
+					09560E4F1E9011AC0044B877 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = WG6TQ4AF5X;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E48009001E432A9500E85169;
+					};
 					E48009001E432A9500E85169 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -156,11 +212,19 @@
 			projectRoot = "";
 			targets = (
 				E48009001E432A9500E85169 /* MoonTyper */,
+				09560E4F1E9011AC0044B877 /* MoonTyperTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		09560E4E1E9011AC0044B877 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E48008FF1E432A9500E85169 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -193,6 +257,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		09560E4C1E9011AC0044B877 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09560E531E9011AC0044B877 /* MoonTyperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E48008FD1E432A9500E85169 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -211,6 +283,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		09560E561E9011AC0044B877 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E48009001E432A9500E85169 /* MoonTyper */;
+			targetProxy = 09560E551E9011AC0044B877 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0939076D1E804E3A0067DD83 /* Main.storyboard */ = {
@@ -232,6 +312,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		09560E571E9011AC0044B877 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = WG6TQ4AF5X;
+				INFOPLIST_FILE = MoonTyperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ssskr.MoonTyperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoonTyper.app/Contents/MacOS/MoonTyper";
+			};
+			name = Debug;
+		};
+		09560E581E9011AC0044B877 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = WG6TQ4AF5X;
+				INFOPLIST_FILE = MoonTyperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ssskr.MoonTyperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoonTyper.app/Contents/MacOS/MoonTyper";
+			};
+			name = Release;
+		};
 		E480090E1E432A9500E85169 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -363,6 +475,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		09560E591E9011AC0044B877 /* Build configuration list for PBXNativeTarget "MoonTyperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09560E571E9011AC0044B877 /* Debug */,
+				09560E581E9011AC0044B877 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		E48008FC1E432A9500E85169 /* Build configuration list for PBXProject "MoonTyper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

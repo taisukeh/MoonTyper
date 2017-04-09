@@ -99,6 +99,13 @@ class TsukiInterceptor: NSObject {
       return nil
     }
     
+    if !keyState.match.isEmpty && event.hasModifier {
+      self.keyState = nil
+      keyState.match.entries[0].keyResult.postEvent(from: event)
+      event.post(tap: .cghidEventTap)
+      return nil
+    }
+    
     if !keyState.match.isEmpty && !event.hasModifier {
       self.keyState = nil
       keyState.match.entries[0].keyResult.postEvent(from: event)

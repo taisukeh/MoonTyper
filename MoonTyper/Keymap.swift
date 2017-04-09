@@ -132,11 +132,15 @@ struct KeyResult {
   
   func postEvent(from event: CGEvent) {
     let origKeyCode = CGKeyCode(event.getIntegerValueField(.keyboardEventKeycode))
+    let origFlags = event.flags
+    event.flags.subtract(CGEvent.modifiers)
+
     for keyCode in keyCodes {
       event.setIntegerValueField(.keyboardEventKeycode, value: Int64(keyCode))
       event.post(tap: .cghidEventTap)
     }
     event.setIntegerValueField(.keyboardEventKeycode, value: Int64(origKeyCode))
+    event.flags = origFlags
   }
 }
 

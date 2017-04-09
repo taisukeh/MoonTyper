@@ -1,0 +1,27 @@
+
+/* Class = "UIButton"; normalTitle = "TapMe"; ObjectID = "0br-EX-AUP"; */
+"0br-EX-AUP.normalTitle" = "TapMe";
+
+/* Class = "UILabel"; accessibilityLabel = "debugLabel"; ObjectID = "FAz-sk-QmU"; */
+"FAz-sk-QmU.accessibilityLabel" = "debugLabel";
+
+/* Class = "UIBarButtonItem"; title = "TapMe"; ObjectID = "PtG-IX-ax4"; */
+"PtG-IX-ax4.title" = "TapMe";
+
+/* Class = "UISegmentedControl"; UpX-Bf-ZT6.segmentTitles[0] = "First"; ObjectID = "UpX-Bf-ZT6"; */
+"UpX-Bf-ZT6.segmentTitles[0]" = "First";
+
+/* Class = "UISegmentedControl"; UpX-Bf-ZT6.segmentTitles[1] = "Second"; ObjectID = "UpX-Bf-ZT6"; */
+"UpX-Bf-ZT6.segmentTitles[1]" = "Second";
+
+/* Class = "UIButton"; normalTitle = "Open ActionSheet"; ObjectID = "VeZ-e0-mdh"; */
+"VeZ-e0-mdh.normalTitle" = "Open ActionSheet";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "fAU-yD-Sq3"; */
+"fAU-yD-Sq3.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Test Pan gesture in this view"; ObjectID = "fQw-v9-hRf"; */
+"fQw-v9-hRf.text" = "Test Pan gesture in this view";
+
+/* Class = "UIButton"; normalTitle = "Open AlertView"; ObjectID = "gVF-My-cWk"; */
+"gVF-My-cWk.normalTitle" = "Open AlertView";

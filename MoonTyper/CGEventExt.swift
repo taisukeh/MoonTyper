@@ -10,6 +10,10 @@ import Foundation
 import Cocoa
 
 extension CGEvent {
+  static var modifiers: CGEventFlags {
+    return [.maskCommand, .maskControl, .maskShift, .maskAlternate]
+  }
+
   var hasModifier: Bool {
     return !flags.intersection([.maskCommand, .maskControl, .maskShift, .maskAlternate]).isEmpty
   }
